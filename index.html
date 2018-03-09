@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Programming fun</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  </head>
+  <body>
+    <div>
+      <button onClick="javascript:alert('Hi Simple! I\'m JavaScript!')">I'm simple!</button>
+    </div>
+    <div>
+      <h1>What is your name?</h1>
+      <input id="name" type="text" /><button id="name_button">Submit</button>
+    </div>
+    <div>
+      <h2 id="message"></h2>
+      <img id="result" src="" alt=""/>
+    </div>
+  
+<script>
+ $('#name_button').click(checkName);
+
+ function checkName() {
+   var name = $('#name').val();
+   var newSrc;
+   var message;
+   var num;
+   if(awesomeNames.includes(name)) {
+     num = Math.floor((Math.random() * happy.length) + 1);
+     newSrc = happy[num];
+     message = name + "?! You're awesome!";
+   }
+   else {
+     num = Math.floor((Math.random() * bored.length) + 1);
+     newSrc = bored[num];
+     message = name + "? Never heard of you...";
+   }
+   $('#message').html(message);
+   console.log(num);
+   $('#result').attr('src', newSrc);
+ }
+
+ var awesomeNames = [
+    'Xadiah',
+    'Taleah',
+    'Wayne',
+    'Taylor',
+    'Daphne',
+    'Isabella',
+    'Jake',
+    'Anna',
+    'Dennis',
+    'Ashtyn',
+    'Ella',
+    'Elijah',
+    'Sham',
+    'Kennedi',
+    'Avery',
+    'Za-Miah',
+    'Gabriel',
+    'Josephine',
+    'Aiden',
+    'James',
+    'Roshanna',
+    'Mrs. Floyd',
+];
+
+
+ var happy = [
+    'https://media3.giphy.com/media/JVdF14CQQH7gs/giphy.gif',
+    'https://media1.giphy.com/media/26ufhqlbeuJsUbvDG/giphy.gif',
+    'https://media0.giphy.com/media/14sy6VGAd4BdKM/giphy.gif',
+    'https://media3.giphy.com/media/mXnO9IiWWarkI/giphy.gif',
+    'https://media2.giphy.com/media/3o7TKLjrEFaMILE6E8/giphy.gif',
+    'https://media2.giphy.com/media/5GoVLqeAOo6PK/giphy.gif',
+    'https://media3.giphy.com/media/xTiN0CNHgoRf1Ha7CM/giphy.gif',
+    'https://media2.giphy.com/media/11sBLVxNs7v6WA/giphy.gif',
+    'https://media0.giphy.com/media/3o7abldj0b3rxrZUxW/giphy.gif',
+    'https://media2.giphy.com/media/Is1O1TWV0LEJi/giphy.gif',
+    'https://media3.giphy.com/media/y8Mz1yj13s3kI/giphy.gif',
+    'https://media3.giphy.com/media/DpB9NBjny7jF1pd0yt2/giphy.gif',
+    'https://media1.giphy.com/media/DYH297XiCS2Ck/giphy.gif',
+    'https://media3.giphy.com/media/YTbZzCkRQCEJa/giphy.gif',
+    'https://media3.giphy.com/media/1PMVNNKVIL8Ig/giphy.gif',
+  ];
+
+  var bored = [
+    'https://media1.giphy.com/media/5gUnOrltPvZzW/giphy.gif',
+    'https://media3.giphy.com/media/o5oLImoQgGsKY/giphy.gif',
+    'https://media3.giphy.com/media/l2JhpjWPccQhsAMfu/giphy.gif',
+    'https://media3.giphy.com/media/l378AEZceMwWboAQE/giphy.gif',
+    'https://media1.giphy.com/media/ZgqJGwh2tLj5C/giphy.gif',
+    'https://media3.giphy.com/media/RKS1pHGiUUZ2g/giphy.gif',
+    'https://media1.giphy.com/media/iW8tsoJWcfPc4/giphy.gif',
+    'https://media3.giphy.com/media/57IQRWq3eidi0/giphy.gif',
+    'https://media1.giphy.com/media/NBb0DtalEEyMU/giphy.gif',
+    'https://media2.giphy.com/media/MGmnFOZRFRo4w/giphy.gif',
+    'https://media2.giphy.com/media/ZXKZWB13D6gFO/giphy.gif',
+    'https://media1.giphy.com/media/dT7LBdAZP1Rh6/giphy.gif',
+    'https://media3.giphy.com/media/l4HnKwiJJaJQB04Zq/giphy.gif',
+    'https://media0.giphy.com/media/MIY4jpusckRmU/giphy.gif',
+    'https://media2.giphy.com/media/16e1J9ztaZ3na/giphy.gif',
+  ];
+
+
+ 
+</script>
+  </body>
+
+
+</html>
+
