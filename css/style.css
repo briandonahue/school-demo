@@ -1,14 +1,4 @@
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Programming fun</title>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-
-  
-      <style>
-      /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
-      * {
+* {
   box-sizing: border-box;
 }
 
@@ -17,16 +7,16 @@ body {
 }
 
 .container {
-  width: 800px;
-  margin: 20px auto;
+  width: 680px;
+  margin: 0px auto;
   position: relative;
   /* HAVE SCALED TO FIT THE WINDOW */
-  transform: scale(1.0);
+  transform: scale(0.6);
 }
 
 .container > .screen {
-  width: 750px;
-  height: 500px;
+  width: 460px;
+  height: 280px;
   position: relative;  
   background: #ff6860;
   border: 20px solid #474e5d;
@@ -65,9 +55,9 @@ body {
 }
 
 .content {
-  width: 850px;
-  height: 450px;
-  left: 10%;
+  width: 420px;
+  height: 240px;
+  left: 50%;
   margin-left: -210px;
   overflow: hidden;
 }
@@ -84,11 +74,11 @@ body {
 }
 
 .pg {
-  width: 380px;
-  height: 250px;
+  width: 240px;
+  height: 180px;
   position: absolute;
   left: 50%;
-  top: 30%;
+  top: 50%;
   margin: -90px 0 0 -120px;
   background: #ffffff;
   border: 1px solid #f4f5f7;
@@ -97,19 +87,9 @@ body {
   box-shadow: 0 5px 0 #e0625e;
 }
 
-.imgcontain {
-  width: 378px;
-  height: 225px;
-}
-#result {
-  width: 100%;
-  height: 100%;
-
-}
-
 .btns {
   position: absolute;
-  top: -13px;
+  top: -20px;
   left: 7px;
 }
 
@@ -117,7 +97,7 @@ body {
   content: "";
   position: absolute;
   left: 35px;
-  top: -2px;
+  top: 5px;
   height: 10px;
   width: 185px;
   background: #fff;
@@ -140,37 +120,6 @@ body {
 
 .btns li:nth-child(3) {
    background: #66b34e; 
-}
-
-.console, #message {
-  color: green;
-  font-family: monospace, monospace;
-  font-size: 32px;
-  margin-top: 5%;
-  margin-left: 5%;
-  width: 450px;
-}
-#message {
-  font-size: 24px;
-  text-decoration:blink;
-
-  -webkit-animation-name:blinker;
-          animation-name:blinker;  
-  -webkit-animation-iteration-count:infinite;  
-          animation-iteration-count:infinite;  
-  -webkit-animation-timing-function:cubic-bezier(1.0,0,0,1.0);
-          animation-timing-function:cubic-bezier(1.0,0,0,1.0);
-  -webkit-animation-duration:1s; 
-          animation-duration:1s; 
-
-}
-.response {
-  margin-top: 20px;
-}
-
-#name {
-  height: 32px;
-  width: 100px;
 }
 
 .txt {
@@ -569,149 +518,3 @@ body {
   height: 10px;
   width: 100px
 }
-    </style>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
-
-</head>
-
-<body>
-
-  <div class="container">
-<div class="screen monitor">
-  <div class="content">
-    <div class="pg">
-      <ul class="btns">
-        <li></li><li></li><li></li>
-      </ul>
-      <div class="imgcontain">
-        <img id="result" src="https://media2.giphy.com/media/16e1J9ztaZ3na/giphy.gif" alt="" />
-      </div>
-      <div class="console">
-      <div class="prompt">What is your name?</div>
-      <div class="response"><span class="cursor">&gt;</span> <span id="name" contenteditable="true" /></div></div>
-      <div id="message" class="response"></div>
-    </div>
-  </div>
-  <div class="base">
-    <div class="grey-shadow"></div>
-    <div class="foot top"></div>
-    <div class="foot bottom"></div>
-    <div class="shadow"></div>
-    <div class="keyboard">
-      <div class="btm"></div>
-      <ul class="keys">
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul>
-      <div class="shadow"></div>
-    </div>
-  </div>
-</div>
-  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-
-  
-
-    <script  src="js/index.js"></script>
-
-
-
-
-<script>
- $('#name').keypress(checkName);
-
- function checkName(ev) {
-   if(ev.which === 13) {
-     ev.preventDefault();
-
-     var name = $('#name').html();
-     var newSrc;
-     var message;
-     var num;
-     if(awesomeNames.includes(name)) {
-       num = Math.floor((Math.random() * happy.length) + 1);
-       newSrc = happy[num];
-       message = name + "?! You're awesome!";
-     }
-     else {
-       num = Math.floor((Math.random() * bored.length) + 1);
-       newSrc = bored[num];
-       message = name + "? Never heard of you...";
-     }
-     $('#message').html(message);
-     console.log(num);
-     $('#result').attr('src', newSrc);
-   }
- }
-
- var awesomeNames = [
-    'Xadiah',
-    'Taleah',
-    'Wayne',
-    'Taylor',
-    'Daphne',
-    'Isabella',
-    'Jake',
-    'Anna',
-    'Dennis',
-    'Ashtyn',
-    'Ella',
-    'Elijah',
-    'Sham',
-    'Kennedi',
-    'Avery',
-    'Za-Miah',
-    'Gabriel',
-    'Josephine',
-    'Aiden',
-    'James',
-    'Roshanna',
-    "Za'miah",
-    'Mrs. Floyd',
-];
-
-
- var happy = [
-    'https://media3.giphy.com/media/JVdF14CQQH7gs/giphy.gif',
-    'https://media1.giphy.com/media/26ufhqlbeuJsUbvDG/giphy.gif',
-    'https://media0.giphy.com/media/14sy6VGAd4BdKM/giphy.gif',
-    'https://media3.giphy.com/media/mXnO9IiWWarkI/giphy.gif',
-    'https://media2.giphy.com/media/3o7TKLjrEFaMILE6E8/giphy.gif',
-    'https://media2.giphy.com/media/5GoVLqeAOo6PK/giphy.gif',
-    'https://media3.giphy.com/media/xTiN0CNHgoRf1Ha7CM/giphy.gif',
-    'https://media2.giphy.com/media/11sBLVxNs7v6WA/giphy.gif',
-    'https://media0.giphy.com/media/3o7abldj0b3rxrZUxW/giphy.gif',
-    'https://media2.giphy.com/media/Is1O1TWV0LEJi/giphy.gif',
-    'https://media3.giphy.com/media/y8Mz1yj13s3kI/giphy.gif',
-    'https://media3.giphy.com/media/DpB9NBjny7jF1pd0yt2/giphy.gif',
-    'https://media1.giphy.com/media/DYH297XiCS2Ck/giphy.gif',
-    'https://media3.giphy.com/media/YTbZzCkRQCEJa/giphy.gif',
-    'https://media3.giphy.com/media/1PMVNNKVIL8Ig/giphy.gif',
-  ];
-
-  var bored = [
-    'https://media1.giphy.com/media/5gUnOrltPvZzW/giphy.gif',
-    'https://media3.giphy.com/media/o5oLImoQgGsKY/giphy.gif',
-    'https://media3.giphy.com/media/l2JhpjWPccQhsAMfu/giphy.gif',
-    'https://media3.giphy.com/media/l378AEZceMwWboAQE/giphy.gif',
-    'https://media1.giphy.com/media/ZgqJGwh2tLj5C/giphy.gif',
-    'https://media3.giphy.com/media/RKS1pHGiUUZ2g/giphy.gif',
-    'https://media1.giphy.com/media/iW8tsoJWcfPc4/giphy.gif',
-    'https://media3.giphy.com/media/57IQRWq3eidi0/giphy.gif',
-    'https://media1.giphy.com/media/NBb0DtalEEyMU/giphy.gif',
-    'https://media2.giphy.com/media/MGmnFOZRFRo4w/giphy.gif',
-    'https://media2.giphy.com/media/ZXKZWB13D6gFO/giphy.gif',
-    'https://media1.giphy.com/media/dT7LBdAZP1Rh6/giphy.gif',
-    'https://media3.giphy.com/media/l4HnKwiJJaJQB04Zq/giphy.gif',
-    'https://media0.giphy.com/media/MIY4jpusckRmU/giphy.gif',
-    'https://media2.giphy.com/media/16e1J9ztaZ3na/giphy.gif',
-  ];
-
-
- 
-</script>
-</body>
-
-</html>
